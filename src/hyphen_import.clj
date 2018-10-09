@@ -1,4 +1,6 @@
 (ns hyphen-import
+  "Import a given csv and convert it to an sql ready to be upserted in
+  the database"
   (:require [clojure.data.csv :as csv]
             [clojure.string :as string]
             [clojure.java.io :as io]))
@@ -18,7 +20,9 @@
   (let [[word hyphenation] (map escape-sql record)]
     (format "(\"%s\", \"%s\", %s)" word hyphenation, spelling)))
 
-(defn -main [& args]
+(defn -main
+  "Import given `file`, convert to sql and print to stdout"
+  [& args]
   (let [file (first args)
         records (->>
                  file
