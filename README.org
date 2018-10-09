@@ -1,0 +1,23 @@
+#+TITLE: Hyphenation Importer
+
+A quick hack to import a set of hyphenations from a csv file and
+generate sql that can be inserted into the existing database.
+
+* Usage
+
+#+BEGIN_SRC shell
+clj -m hyphen-import hyph-de-new.csv > import.sql
+#+END_SRC
+
+* Prerequisites
+
+Install the Clojure cli tools as described in the [[https://clojure.org/guides/getting_started][Getting Started
+Guide]].
+
+* License
+
+Copyright © 2018 [[https://www.sbs.ch/][Swiss Library for the Blind, Visually Impaired and
+Print Disabled]].
+
+Distributed under the [[http://www.gnu.org/licenses/agpl-3.0.html][GNU Affero General Public License]]. See the file
+LICENSE.
