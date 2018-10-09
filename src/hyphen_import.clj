@@ -5,7 +5,7 @@
             [clojure.string :as string]
             [clojure.java.io :as io]))
 
-(def table "words_new")
+(def table "words")
 (def spelling "1")
 
 (defn read-csv [file]
