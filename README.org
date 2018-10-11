@@ -3,11 +3,25 @@
 A quick hack to import a set of hyphenations from a csv file and
 generate sql that can be inserted into the existing database.
 
+The approach ultimately failed due to [[https://medium.com/@manish_demblani/breaking-out-from-the-mysql-character-set-hell-24c6a306e1e5][MySQL collation problems]] (aka is
+a string equal to another string under which collation?).
+
+The repo is kept around to serve as an example on how to write a
+script using the [[https://clojure.org/guides/deps_and_cli][Clojure CLI tools]]. Also there is a handy [[file:bin/cider][script to
+start a REPL server]]. The original implementation is from [[https://lambdaisland.com/][Arne Brasseur]]
+in a repo called [[https://github.com/plexus/tablizer][tablizer]] and is described in an [[https://clojureverse.org/t/tablizer-fun-experiment-with-clojure-cli-tools/1249][article]] on
+[[https://clojureverse.org][clojureverse]].
+
 * Usage
 
 #+BEGIN_SRC shell
 clj -m hyphen-import hyph-de-new.csv > import.sql
 #+END_SRC
+
+* REPL
+
+Connect to a REPL via cider by starting the script in the bin
+directory.
 
 * Prerequisites
 

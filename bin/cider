@@ -1,0 +1,4 @@
+#!/bin/bash
+clj -R:nrepl:cider bin/cider.clj $* &
+sleep 10
+emacsclient -e '(cider-connect (list :host "localhost" :port "'${1:-7888}'" :project-dir "'`pwd`'"))'
